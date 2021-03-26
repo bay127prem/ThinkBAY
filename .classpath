@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-11">
+		<attributes>
+			<attribute name="module" value="true" />
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/hibernate" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/javafx11" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/javafxcontrols" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/javafxnotif" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/javamail" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/javaCommonsNet" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/javapoi" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/javaCommonsLang" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/pmwTinylog" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/ical4j" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/miscrosoftSQL" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/pdfbox" />
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.USER_LIBRARY/pdfFlyingSaucer" />
+	<classpathentry kind="output" path="bin" />
+</classpath>

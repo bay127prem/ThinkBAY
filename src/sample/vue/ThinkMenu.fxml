@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.menu.ThinkMenuController">
+	<center>
+		<SplitPane fx:id="split" dividerPositions="0.25" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+			<items>
+				<Accordion fx:id="sideBar">
+					<panes>
+						<TitledPane fx:id="infos" text="Infos">
+							<content>
+								<VBox fx:id="infosBox" prefHeight="200.0" prefWidth="100.0" />
+							</content>
+						</TitledPane>
+						<TitledPane fx:id="undoneIdeas" expanded="false" text="Notified Undone Ideas">
+							<content>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+                           <content>
+      								<VBox fx:id="undoneIdeasBox" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+							</content>
+						</TitledPane>
+						<TitledPane fx:id="taskNotifs" expanded="false" text="Task Notifications">
+							<content>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+                           <content>
+										<VBox fx:id="taskNoifsBox" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+							</content>
+						</TitledPane>
+					</panes>
+				</Accordion>
+				<BorderPane prefHeight="373.0" prefWidth="450.0">
+					<center>
+						<TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+							<tabs>
+								<Tab fx:id="calendar" closable="false" text="Calendar" />
+								<Tab fx:id="ideasTable" closable="false" text="Ideas Table">
+									<content>
+										<BorderPane>
+											<center>
+												<TableView fx:id="ideasT" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+													<columns>
+														<TableColumn fx:id="idC" maxWidth="1.7976931348623157E308" prefWidth="50.0" text="ID" />
+														<TableColumn fx:id="titleC" maxWidth="1.7976931348623157E308" prefWidth="149.0" text="Title" />
+														<TableColumn fx:id="taskC" maxWidth="1.7976931348623157E308" prefWidth="50.0" text="Task" />
+														<TableColumn fx:id="dateC" maxWidth="1.7976931348623157E308" prefWidth="110.0" text="Time" />
+														<TableColumn fx:id="startDateC" maxWidth="1.7976931348623157E308" prefWidth="110.0" text="Start" />
+														<TableColumn fx:id="finishDateCC" maxWidth="1.7976931348623157E308" prefWidth="110.0" text="Finish" />
+														<TableColumn fx:id="deleteC" maxWidth="1.7976931348623157E308" prefWidth="60.0" sortable="false" text="Delete" />
+													</columns>
+												</TableView>
+											</center>
+											<bottom>
+												<BorderPane BorderPane.alignment="CENTER">
+													<center>
+														<ToolBar BorderPane.alignment="CENTER">
+															<items>
+																<Spinner fx:id="spinner" prefHeight="25.0" prefWidth="50.0" />
+																<TextField fx:id="ideaCompleter" prefHeight="25.0" prefWidth="140.0" />
+																<DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="140.0" />
+																<ToggleButton fx:id="task" mnemonicParsing="false" prefWidth="70.0" text="Task" />
+                                                <ComboBox fx:id="done" prefWidth="70.0" promptText="Done" />
+																<ComboBox fx:id="yearBox" prefWidth="70.0" promptText="Year" />
+																<Button fx:id="reset" defaultButton="true" mnemonicParsing="false" onAction="#reset" prefWidth="70.0" text="Reset" />
+																<Button fx:id="filter" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#filter" prefWidth="70.0" text="Filter" />
+															</items>
+															<BorderPane.margin>
+																<Insets />
+															</BorderPane.margin>
+															<padding>
+																<Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+															</padding>
+														</ToolBar>
+													</center>
+												</BorderPane>
+											</bottom>
+										</BorderPane>
+									</content>
+								</Tab>
+								<Tab fx:id="settings" closable="false" text="Settings" />
+							</tabs>
+						</TabPane>
+					</center>
+				</BorderPane>
+			</items>
+		</SplitPane>
+	</center>
+	<top>
+		<MenuBar fx:id="menu" BorderPane.alignment="CENTER">
+			<menus>
+				<Menu fx:id="general" mnemonicParsing="false" text="General">
+					<items>
+						<MenuItem fx:id="newIdea" mnemonicParsing="false" onAction="#newIdea" text="New Idea">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="newWN" mnemonicParsing="false" onAction="#newWN" text="New WorkNote">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="W" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="refresh" mnemonicParsing="false" onAction="#refresh" text="Refresh">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<CheckMenuItem fx:id="focus" mnemonicParsing="false" onAction="#focus" text="Focus Mode">
+							<accelerator>
+								<KeyCodeCombination alt="DOWN" code="F" control="UP" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</CheckMenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="disconnect" mnemonicParsing="false" onAction="#disconnect" text="Disconnect">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+                  		<MenuItem fx:id="close" mnemonicParsing="false" onAction="#close" text="Exit">
+                  			<accelerator>
+								<KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+                  		</MenuItem>
+					</items>
+				</Menu>
+				<Menu fx:id="importExport" mnemonicParsing="false" text="Import &amp; Export">
+					<items>
+						<MenuItem fx:id="importIdeas" mnemonicParsing="false" onAction="#importIdeas" text="Import Ideas" />
+						<MenuItem fx:id="exportIdeasTable" mnemonicParsing="false" onAction="#exportCurrentTable" text="Export Current Ideas Table" />
+					</items>
+				</Menu>
+				<Menu fx:id="loadManager" mnemonicParsing="false" text="Load Manager">
+					<items>
+						<MenuItem fx:id="loads" mnemonicParsing="false" onAction="#loads" text="loads">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="L" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu fx:id="help" mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem fx:id="aboutUS" mnemonicParsing="false" onAction="#about" text="About Us" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+</BorderPane>

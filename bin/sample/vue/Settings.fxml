@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="pane"
+	xmlns="http://javafx.com/javafx/11.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="sample.control.menu.SettingsController">
+	<center>
+		<Accordion fx:id="accordion" prefHeight="300.0"
+			prefWidth="500.0" BorderPane.alignment="CENTER">
+			<panes>
+				<TitledPane fx:id="connection" text="Connection">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<GridPane BorderPane.alignment="CENTER">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES"
+											minWidth="10.0" prefWidth="100.0" />
+										<ColumnConstraints hgrow="SOMETIMES"
+											minWidth="10.0" prefWidth="100.0" />
+										<ColumnConstraints hgrow="SOMETIMES"
+											minWidth="10.0" prefWidth="100.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints
+											maxHeight="1.7976931348623157E308" prefHeight="30.0"
+											vgrow="SOMETIMES" />
+										<RowConstraints
+											maxHeight="1.7976931348623157E308" prefHeight="30.0"
+											vgrow="SOMETIMES" />
+										<RowConstraints
+											maxHeight="1.7976931348623157E308" prefHeight="30.0"
+											vgrow="SOMETIMES" />
+										<RowConstraints
+											maxHeight="1.7976931348623157E308" prefHeight="30.0"
+											vgrow="SOMETIMES" />
+										<RowConstraints
+											maxHeight="1.7976931348623157E308" minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints
+											maxHeight="1.7976931348623157E308" prefHeight="30.0"
+											vgrow="SOMETIMES" />
+										<RowConstraints
+											maxHeight="1.7976931348623157E308" prefHeight="30.0"
+											vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<RadioButton fx:id="localRadio"
+											mnemonicParsing="false" selected="true"
+											text="Local DB Connection" GridPane.halignment="CENTER">
+											<toggleGroup>
+												<ToggleGroup fx:id="db" />
+											</toggleGroup>
+										</RadioButton>
+										<Label fx:id="ftpLabel" text="FTP Connection"
+											GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+										<TextField editable="false" promptText="Host"
+											text="localhost" GridPane.rowIndex="1">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="localPort" promptText="port"
+											GridPane.rowIndex="2">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="localDB" promptText="database"
+											GridPane.rowIndex="3">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="locarUser" promptText="user"
+											GridPane.rowIndex="4">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<PasswordField fx:id="localPassword"
+											promptText="password" GridPane.rowIndex="5">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</PasswordField>
+										<ComboBox fx:id="localVerBox" prefWidth="30000.0"
+											promptText="MySQL version" GridPane.rowIndex="6">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</ComboBox>
+										<RadioButton fx:id="externRadio"
+											mnemonicParsing="false" text="Extern DB Connection"
+											toggleGroup="$db" GridPane.columnIndex="1"
+											GridPane.halignment="CENTER" />
+										<TextField fx:id="externHost" promptText="host"
+											GridPane.columnIndex="1" GridPane.rowIndex="1">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="externPort" promptText="port"
+											GridPane.columnIndex="1" GridPane.rowIndex="2">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="externDB" promptText="database"
+											GridPane.columnIndex="1" GridPane.rowIndex="3">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="externUser" promptText="user"
+											GridPane.columnIndex="1" GridPane.rowIndex="4">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<PasswordField fx:id="externPassword"
+											promptText="password" GridPane.columnIndex="1"
+											GridPane.rowIndex="5">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</PasswordField>
+										<ComboBox fx:id="externVerBox" prefWidth="20000.0"
+											promptText="MySQL version" GridPane.columnIndex="1"
+											GridPane.rowIndex="6">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</ComboBox>
+										<TextField fx:id="ftpHost" promptText="host"
+											GridPane.columnIndex="2" GridPane.rowIndex="1">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="ftpPort" promptText="port"
+											GridPane.columnIndex="2" GridPane.rowIndex="2">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<TextField fx:id="ftpUser" promptText="user"
+											GridPane.columnIndex="2" GridPane.rowIndex="4">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</TextField>
+										<PasswordField fx:id="ftpPassword"
+											promptText="password" GridPane.columnIndex="2"
+											GridPane.rowIndex="5">
+											<GridPane.margin>
+												<Insets left="5.0" right="5.0" />
+											</GridPane.margin>
+										</PasswordField>
+									</children>
+								</GridPane>
+							</center>
+						</BorderPane>
+					</content>
+				</TitledPane>
+				<TitledPane fx:id="general" text="General">
+					<content>
+						<VBox prefHeight="200.0" prefWidth="100.0">
+							<children>
+								<ComboBox fx:id="languageBox" prefWidth="20000.0"
+									promptText="Language">
+									<VBox.margin>
+										<Insets bottom="20.0" top="20.0" />
+									</VBox.margin>
+								</ComboBox>
+								<BorderPane>
+									<center>
+										<TextField fx:id="dirField" editable="false"
+											BorderPane.alignment="CENTER" />
+									</center>
+									<right>
+										<Button fx:id="dirButton" mnemonicParsing="false"
+											onAction="#dirChoose" text="Choose ideas directory"
+											BorderPane.alignment="CENTER" />
+									</right>
+									<VBox.margin>
+										<Insets bottom="20.0" />
+									</VBox.margin>
+								</BorderPane>
+								<ComboBox fx:id="resultsBox" prefWidth="20000.0"
+									promptText="Max number of results">
+									<VBox.margin>
+										<Insets bottom="20.0" />
+									</VBox.margin>
+								</ComboBox>
+								<RadioButton fx:id="trayRadio"
+									mnemonicParsing="false" text="Tray Notification">
+									<VBox.margin>
+										<Insets bottom="10.0" />
+									</VBox.margin>
+								</RadioButton>
+								<HBox prefHeight="100.0" prefWidth="200.0">
+									<children>
+										<RadioButton fx:id="defaultTheme"
+											mnemonicParsing="false" text="Default Theme">
+											<HBox.margin>
+												<Insets right="20.0" />
+											</HBox.margin>
+											<toggleGroup>
+												<ToggleGroup fx:id="theme" />
+											</toggleGroup>
+										</RadioButton>
+										<RadioButton fx:id="customTheme"
+											mnemonicParsing="false" selected="true" text="Custom Theme"
+											toggleGroup="$theme" />
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+					</content>
+				</TitledPane>
+				<TitledPane fx:id="accounts" text="Accounts">
+					<content>
+						<BorderPane prefHeight="200.0" prefWidth="200.0">
+							<center>
+								<TableView fx:id="accountsT" prefHeight="200.0"
+									prefWidth="200.0" BorderPane.alignment="CENTER">
+									<columns>
+										<TableColumn fx:id="device"
+											maxWidth="1.7976931348623157E308" prefWidth="145.0"
+											text="Device ID (MAC Address)" />
+										<TableColumn fx:id="allow" prefWidth="90.0"
+											text="Allow" />
+										<TableColumn fx:id="connected" prefWidth="70.0"
+											text="Connected" />
+										<TableColumn fx:id="lastVisit" prefWidth="110.0"
+											text="Last Visit" />
+									</columns>
+								</TableView>
+							</center>
+							<bottom>
+								<BorderPane BorderPane.alignment="CENTER">
+									<center>
+										<PasswordField fx:id="passwordField"
+											BorderPane.alignment="CENTER" />
+									</center>
+									<right>
+										<Button fx:id="passwordButton" mnemonicParsing="false"
+											onAction="#passwordChange" text="Change password"
+											BorderPane.alignment="CENTER" />
+									</right>
+									<BorderPane.margin>
+										<Insets top="10.0" />
+									</BorderPane.margin>
+								</BorderPane>
+							</bottom>
+						</BorderPane>
+					</content>
+				</TitledPane>
+			</panes>
+		</Accordion>
+	</center>
+	<bottom>
+		<HBox alignment="CENTER" BorderPane.alignment="CENTER">
+			<BorderPane.margin>
+				<Insets bottom="5.0" top="5.0" />
+			</BorderPane.margin>
+			<children>
+				<Button fx:id="reset" mnemonicParsing="false"
+					onAction="#reset" text="Reset">
+					<HBox.margin>
+						<Insets right="10.0" />
+					</HBox.margin>
+				</Button>
+				<Button fx:id="submit" mnemonicParsing="false"
+					onAction="#submit" text="Submit" />
+			</children>
+		</HBox>
+	</bottom>
+</BorderPane>

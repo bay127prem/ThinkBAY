@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="pane" maxHeight="-Infinity"
+	maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+	prefHeight="400.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/11.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="sample.control.idea.IdeaInfoController">
+	<center>
+		<TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0"
+			tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+				<Tab fx:id="general" text="General">
+					<content>
+						<BorderPane>
+							<bottom>
+								<HBox alignment="CENTER_RIGHT"
+									BorderPane.alignment="CENTER_RIGHT">
+									<BorderPane.margin>
+										<Insets bottom="10.0" left="50.0" right="20.0"
+											top="10.0" />
+									</BorderPane.margin>
+									<children>
+										<ColorPicker fx:id="colorPicker">
+											<HBox.margin>
+												<Insets bottom="10.0" right="10.0" />
+											</HBox.margin>
+										</ColorPicker>
+										<ProgressIndicator fx:id="progressIndicator"
+											progress="0.0" />
+									</children>
+								</HBox>
+							</bottom>
+							<center>
+								<GridPane alignment="CENTER_LEFT"
+									BorderPane.alignment="CENTER">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES"
+											maxWidth="240.0" minWidth="10.0" prefWidth="141.0" />
+										<ColumnConstraints hgrow="SOMETIMES"
+											maxWidth="439.0" minWidth="10.0" prefWidth="359.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Label fx:id="idLabel" text="Id:"
+											GridPane.halignment="CENTER" />
+										<Label fx:id="titleLabel" text="Title:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+										<Label fx:id="dateLabel" text="Date and time:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+										<Label fx:id="relIdeasLabel" text="Related Ideas:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+										<Label fx:id="workNotesLabel" text="Work Notes:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+										<Label fx:id="attachLabel" text="Attachments:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+										<Label fx:id="toUploadLabel" text="To Uploads:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+										<Text fx:id="idText" strokeType="OUTSIDE"
+											strokeWidth="0.0" text="Text" GridPane.columnIndex="1">
+											<font>
+												<Font size="13.0" />
+											</font>
+										</Text>
+										<BorderPane GridPane.columnIndex="1"
+											GridPane.rowIndex="1">
+											<left>
+												<Text fx:id="titleText" strokeType="OUTSIDE"
+													strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER">
+													<font>
+														<Font name="Arial Italic" size="13.0" />
+													</font>
+												</Text>
+											</left>
+											<center>
+												<TextField fx:id="titleField" visible="false"
+													BorderPane.alignment="CENTER">
+													<BorderPane.margin>
+														<Insets left="10.0" right="50.0" />
+													</BorderPane.margin>
+												</TextField>
+											</center>
+										</BorderPane>
+										<BorderPane prefHeight="200.0" prefWidth="200.0"
+											GridPane.columnIndex="1" GridPane.halignment="CENTER"
+											GridPane.rowIndex="2" GridPane.valignment="CENTER">
+											<left>
+												<Text fx:id="dateText" strokeType="OUTSIDE"
+													strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER">
+													<font>
+														<Font size="13.0" />
+													</font>
+												</Text>
+											</left>
+											<center>
+												<HBox fx:id="dateTimeBox" alignment="CENTER"
+													visible="false" BorderPane.alignment="CENTER">
+													<children>
+														<DatePicker fx:id="datePicker"
+															prefWidth="250.0">
+															<HBox.margin>
+																<Insets left="10.0" right="10.0" />
+															</HBox.margin>
+														</DatePicker>
+														<TextField fx:id="hourField">
+															<HBox.margin>
+																<Insets left="5.0" right="5.0" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="minuteField">
+															<HBox.margin>
+																<Insets left="5.0" right="50.0" />
+															</HBox.margin>
+														</TextField>
+													</children>
+												</HBox>
+											</center>
+										</BorderPane>
+										<Text fx:id="relIdeasText" strokeType="OUTSIDE"
+											strokeWidth="0.0" text="Text" GridPane.columnIndex="1"
+											GridPane.rowIndex="3">
+											<font>
+												<Font size="13.0" />
+											</font>
+										</Text>
+										<Text fx:id="workNotesText" strokeType="OUTSIDE"
+											strokeWidth="0.0" text="Text" GridPane.columnIndex="1"
+											GridPane.rowIndex="4">
+											<font>
+												<Font size="13.0" />
+											</font>
+										</Text>
+										<Text fx:id="attachText" strokeType="OUTSIDE"
+											strokeWidth="0.0" text="Text" GridPane.columnIndex="1"
+											GridPane.rowIndex="5">
+											<font>
+												<Font size="13.0" />
+											</font>
+										</Text>
+										<Text fx:id="toUploadText" strokeType="OUTSIDE"
+											strokeWidth="0.0" text="Text" GridPane.columnIndex="1"
+											GridPane.rowIndex="6">
+											<font>
+												<Font size="13.0" />
+											</font>
+										</Text>
+									</children>
+								</GridPane>
+							</center>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="editor" text="Editor">
+					<content>
+						<BorderPane>
+							<center>
+								<TextArea fx:id="descArea" prefHeight="200.0"
+									prefWidth="200.0" BorderPane.alignment="CENTER" />
+							</center>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="relatedIdeas" text="Related Ideas">
+					<content>
+						<BorderPane>
+							<center>
+								<TableView fx:id="ideasT" prefHeight="200.0"
+									prefWidth="200.0" BorderPane.alignment="CENTER">
+									<columns>
+										<TableColumn fx:id="idC"
+											maxWidth="1.7976931348623157E308" prefWidth="50.0" text="ID" />
+										<TableColumn fx:id="titleC"
+											maxWidth="1.7976931348623157E308" prefWidth="149.0"
+											text="Title" />
+										<TableColumn fx:id="taskC"
+											maxWidth="1.7976931348623157E308" prefWidth="50.0"
+											text="Task" />
+										<TableColumn fx:id="dateC"
+											maxWidth="1.7976931348623157E308" prefWidth="110.0"
+											text="Time" />
+										<TableColumn fx:id="startDateC"
+											maxWidth="1.7976931348623157E308" prefWidth="110.0"
+											text="Start" />
+										<TableColumn fx:id="finishDateCC"
+											maxWidth="1.7976931348623157E308" prefWidth="110.0"
+											text="Finish" />
+										<TableColumn fx:id="deleteC"
+											maxWidth="1.7976931348623157E308" prefWidth="60.0"
+											sortable="false" text="Delete" />
+									</columns>
+								</TableView>
+							</center>
+							<bottom>
+								<HBox alignment="CENTER">
+									<children>
+										<TextField fx:id="ideaCompleter" prefHeight="25.0"
+											prefWidth="275.0">
+											<HBox.margin>
+												<Insets right="20.0" />
+											</HBox.margin>
+										</TextField>
+									</children>
+									<BorderPane.margin>
+										<Insets bottom="20.0" top="20.0" />
+									</BorderPane.margin>
+								</HBox>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="workNotes" text="WorkNotes">
+					<content>
+						<BorderPane>
+							<center>
+								<TableView fx:id="wNT" prefHeight="200.0"
+									prefWidth="200.0" BorderPane.alignment="CENTER">
+									<columns>
+										<TableColumn fx:id="idWNC" prefWidth="50.0"
+											text="ID" />
+										<TableColumn fx:id="titleWNC" prefWidth="163.0"
+											text="Title" />
+										<TableColumn fx:id="dateWNC" prefWidth="110.0"
+											text="Date and time" />
+										<TableColumn fx:id="doneWNC" prefWidth="50.0"
+											sortable="false" text="Done" />
+										<TableColumn fx:id="deleteWNC" prefWidth="60.0"
+											sortable="false" text="Delete" />
+									</columns>
+								</TableView>
+							</center>
+							<bottom>
+								<BorderPane BorderPane.alignment="CENTER">
+									<BorderPane.margin>
+										<Insets bottom="20.0" top="20.0" />
+									</BorderPane.margin>
+									<center>
+										<HBox alignment="CENTER" BorderPane.alignment="CENTER">
+											<children>
+												<Button fx:id="addWN" mnemonicParsing="false"
+													onAction="#addWN" text="Add">
+													<HBox.margin>
+														<Insets right="50.0" />
+													</HBox.margin>
+												</Button>
+												<ToggleButton fx:id="notifyWN"
+													mnemonicParsing="false" text="Notify" />
+											</children>
+										</HBox>
+									</center>
+								</BorderPane>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="attachs" text="Attachments">
+					<content>
+						<BorderPane>
+							<center>
+								<TableView fx:id="attachT" prefHeight="200.0"
+									prefWidth="200.0" BorderPane.alignment="CENTER">
+									<columns>
+										<TableColumn fx:id="idAttachC" prefWidth="75.0"
+											text="ID" />
+										<TableColumn fx:id="localPathC" prefWidth="163.0"
+											text="Local Path" />
+										<TableColumn fx:id="externPathC" prefWidth="172.0"
+											text="Extern Path" />
+										<TableColumn fx:id="uploadAttachC"
+											prefWidth="95.0" text="Upload" />
+										<TableColumn fx:id="deleteAttachC"
+											prefWidth="94.0" text="Delete" />
+									</columns>
+								</TableView>
+							</center>
+							<bottom>
+								<BorderPane>
+									<center>
+										<Button fx:id="attachmentChooser"
+											mnemonicParsing="false" onAction="#addAttach" text="Add" />
+									</center>
+									<BorderPane.margin>
+										<Insets bottom="20.0" top="20.0" />
+									</BorderPane.margin>
+								</BorderPane>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+				<Tab fx:id="taskConf" text="Task Configuration">
+					<content>
+						<BorderPane>
+							<center>
+								<GridPane alignment="CENTER_LEFT"
+									BorderPane.alignment="CENTER">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES"
+											maxWidth="240.0" minWidth="10.0" prefWidth="141.0" />
+										<ColumnConstraints hgrow="SOMETIMES"
+											maxWidth="439.0" minWidth="10.0" prefWidth="359.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints minHeight="10.0"
+											prefHeight="30.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Label fx:id="startDateLabel" text="Start date:"
+											GridPane.halignment="CENTER" />
+										<Label fx:id="finishDateLabel" text="Finish date:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+										<BorderPane prefHeight="200.0" prefWidth="200.0"
+											GridPane.columnIndex="1" GridPane.halignment="CENTER"
+											GridPane.valignment="CENTER">
+											<left>
+												<Text fx:id="startDateText" strokeType="OUTSIDE"
+													strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER">
+													<font>
+														<Font size="13.0" />
+													</font>
+												</Text>
+											</left>
+											<center>
+												<HBox fx:id="dateStartBox" alignment="CENTER"
+													visible="false" BorderPane.alignment="CENTER">
+													<children>
+														<DatePicker fx:id="dateStartPicker"
+															prefWidth="250.0">
+															<HBox.margin>
+																<Insets left="10.0" right="10.0" />
+															</HBox.margin>
+														</DatePicker>
+														<TextField fx:id="hourStartField">
+															<HBox.margin>
+																<Insets left="5.0" right="5.0" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="minuteStartField">
+															<HBox.margin>
+																<Insets left="5.0" right="50.0" />
+															</HBox.margin>
+														</TextField>
+													</children>
+												</HBox>
+											</center>
+										</BorderPane>
+										<ButtonBar buttonOrder="" prefHeight="40.0"
+											prefWidth="200.0" GridPane.columnIndex="1"
+											GridPane.rowIndex="1">
+											<buttons>
+												<RadioButton fx:id="once"
+													mnemonicParsing="false" selected="true" text="Once">
+													<toggleGroup>
+														<ToggleGroup fx:id="period" />
+													</toggleGroup>
+												</RadioButton>
+												<RadioButton fx:id="daily"
+													mnemonicParsing="false" text="Daily" toggleGroup="$period" />
+												<RadioButton fx:id="weekly"
+													mnemonicParsing="false" text="Weekly" toggleGroup="$period" />
+												<RadioButton fx:id="monthly"
+													mnemonicParsing="false" text="Monthly"
+													toggleGroup="$period" />
+												<RadioButton fx:id="yearly"
+													mnemonicParsing="false" text="Yearly" toggleGroup="$period" />
+											</buttons>
+										</ButtonBar>
+										<BorderPane fx:id="dateFinishPane"
+											prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1"
+											GridPane.rowIndex="2">
+											<left>
+												<Text fx:id="finishDateText" strokeType="OUTSIDE"
+													strokeWidth="0.0" text="Text" BorderPane.alignment="CENTER">
+													<font>
+														<Font size="13.0" />
+													</font>
+												</Text>
+											</left>
+											<center>
+												<HBox fx:id="dateFinishBox" alignment="CENTER"
+													visible="false" BorderPane.alignment="CENTER">
+													<children>
+														<DatePicker fx:id="dateFinishPicker"
+															prefWidth="250.0">
+															<HBox.margin>
+																<Insets left="10.0" right="10.0" />
+															</HBox.margin>
+														</DatePicker>
+														<TextField fx:id="hourFinishField">
+															<HBox.margin>
+																<Insets left="5.0" right="5.0" />
+															</HBox.margin>
+														</TextField>
+														<TextField fx:id="minuteFinishField">
+															<HBox.margin>
+																<Insets left="5.0" right="50.0" />
+															</HBox.margin>
+														</TextField>
+													</children>
+												</HBox>
+											</center>
+										</BorderPane>
+										<Label fx:id="taskPeriodLabel" text="Period:"
+											GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+									</children>
+								</GridPane>
+							</center>
+							<bottom>
+								<ToggleButton fx:id="notifyTask"
+									mnemonicParsing="false" text="Notify"
+									BorderPane.alignment="CENTER_RIGHT">
+									<BorderPane.margin>
+										<Insets bottom="20.0" right="50.0" />
+									</BorderPane.margin>
+								</ToggleButton>
+							</bottom>
+						</BorderPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<top>
+		<MenuBar BorderPane.alignment="CENTER">
+			<menus>
+				<Menu fx:id="ideaMenu" mnemonicParsing="false" text="Idea">
+					<items>
+						<MenuItem fx:id="save" mnemonicParsing="false"
+							onAction="#save" text="Save">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="S"
+									control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="refresh" mnemonicParsing="false"
+							onAction="#refresh" text="Refresh">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="R"
+									control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="importItem" mnemonicParsing="false"
+							onAction="#importIdea" text="Import">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="I"
+									control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="exportItem" mnemonicParsing="false"
+							onAction="#exportIdea" text="Export">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="E"
+									control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<SeparatorMenuItem mnemonicParsing="false" />
+						<MenuItem fx:id="back" mnemonicParsing="false"
+							onAction="#back" text="Back">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="B"
+									control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+					</items>
+				</Menu>
+				<Menu fx:id="editMenu" mnemonicParsing="false" text="Edit">
+					<items>
+						<MenuItem fx:id="findReplace" mnemonicParsing="false"
+							onAction="#findReplace" text="Find/Replace">
+							<accelerator>
+								<KeyCodeCombination alt="UP" code="F"
+									control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+						<MenuItem fx:id="orientItem" mnemonicParsing="false"
+							onAction="#changeOrientation" text="Orientation">
+							<accelerator>
+								<KeyCodeCombination alt="DOWN" code="O"
+									control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+							</accelerator>
+						</MenuItem>
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+</BorderPane>
